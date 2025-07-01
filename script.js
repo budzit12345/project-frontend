@@ -20,6 +20,7 @@ document.getElementById('todo-form').addEventListener('submit', function (e) {
     deleteBtn.style.marginLeft = '10px';
 
     deleteBtn.addEventListener('click', function () {
+      console.log('Usuwam zadanie:', li.textContent);
       li.remove();
     });
 
