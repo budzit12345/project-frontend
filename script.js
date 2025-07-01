@@ -1,3 +1,12 @@
+const nav = document.getElementById('main-nav');
+nav.innerHTML = `
+  <ul style="display:flex; gap:15px; list-style:none; padding:0;">
+    <li><a href="index.html">Strona główna</a></li>
+    <li><a href="about.html">O projekcie</a></li>
+    <li><a href="contact.html">Kontakt</a></li>
+  </ul>
+`;
+
 document.getElementById('todo-form').addEventListener('submit', function (e) {
   e.preventDefault();
   const input = document.getElementById('todo-input');
