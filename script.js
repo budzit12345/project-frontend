@@ -5,6 +5,16 @@ document.getElementById('todo-form').addEventListener('submit', function (e) {
   if (taskText !== '') {
     const li = document.createElement('li');
     li.textContent = taskText;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Usuń';
+    deleteBtn.style.marginLeft = '10px';
+
+    deleteBtn.addEventListener('click', function () {
+      li.remove();
+    });
+
+    li.appendChild(deleteBtn);
     document.getElementById('todo-list').appendChild(li);
     input.value = '';
   }
