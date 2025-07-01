@@ -1,0 +1,17 @@
+# Systemowe / IDE
+.DS_Store
+Thumbs.db
+*.log
+
+# edytory kodu
+.vscode/
+.idea/
+
+# cache przeglądarki / lokalne testy
+*.local
+*.cache
+
+# tymczasowe pliki
+*.tmp
+*.bak
+*.swp
