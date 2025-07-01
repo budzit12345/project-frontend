@@ -7,23 +7,27 @@ nav.innerHTML = `
   </ul>
 `;
 
+let taskId = 0;
+const tasks = {};
+
 document.getElementById('todo-form').addEventListener('submit', function (e) {
   e.preventDefault();
   const input = document.getElementById('todo-input');
   const taskText = input.value.trim();
   if (taskText !== '') {
+    taskId++;
+    tasks[taskId] = { text: taskText, done: false };
+
     const li = document.createElement('li');
+    li.dataset.id = taskId;
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.style.marginRight = '10px';
 
     checkbox.addEventListener('change', function () {
-      if (checkbox.checked) {
-        li.style.textDecoration = 'line-through';
-      } else {
-        li.style.textDecoration = 'none';
-      }
+      tasks[taskId].done = checkbox.checked;
+      li.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
     });
 
     li.appendChild(checkbox);
@@ -35,6 +39,7 @@ document.getElementById('todo-form').addEventListener('submit', function (e) {
 
     deleteBtn.addEventListener('click', function () {
       console.log('Usuwam zadanie:', li.textContent);
+      delete tasks[taskId];
       li.remove();
     });
 
@@ -43,4 +48,3 @@ document.getElementById('todo-form').addEventListener('submit', function (e) {
     input.value = '';
   }
 });
-
