@@ -9,7 +9,12 @@
 <body>
   <h1>Witaj w moim projekcie!</h1>
   <button onclick="powitanie()">Kliknij mnie</button>
-
+  <form id="todo-form">
+    <input type="text" id="todo-input" placeholder="Wpisz nowe zadanie" required />
+    <button type="submit">Dodaj</button>
+  </form>
+  <ul id="todo-list"></ul>
+  
   <script src="script.js"></script>
 </body>
 </html>
