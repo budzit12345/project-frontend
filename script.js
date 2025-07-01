@@ -13,7 +13,21 @@ document.getElementById('todo-form').addEventListener('submit', function (e) {
   const taskText = input.value.trim();
   if (taskText !== '') {
     const li = document.createElement('li');
-    li.textContent = taskText;
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.style.marginRight = '10px';
+
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        li.style.textDecoration = 'line-through';
+      } else {
+        li.style.textDecoration = 'none';
+      }
+    });
+
+    li.appendChild(checkbox);
+    li.appendChild(document.createTextNode(taskText));
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Usuń';
@@ -29,3 +43,4 @@ document.getElementById('todo-form').addEventListener('submit', function (e) {
     input.value = '';
   }
 });
+
