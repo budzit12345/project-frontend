@@ -1,0 +1,22 @@
+{
+  "name": "project-frontend",
+  "version": "1.0.0",
+  "description": "Ten projekt to prosta aplikacja webowa do zarządzania listą zadań, napisana w JavaScript. Pozwala użytkownikowi dodawać nowe zadania do listy, usuwać je oraz oznaczać jako wykonane.",
+  "type": "module",
+  "main": "filter.js",
+  "scripts": {
+    "test": "jest --config jest.config.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.0",
+    "@eslint/js": "^9.30.1",
+    "babel-jest": "^30.0.4",
+    "eslint": "^9.30.1",
+    "globals": "^16.3.0",
+    "jest": "^30.0.4",
+    "jest-environment-jsdom": "^30.0.4"
+  }
+}
