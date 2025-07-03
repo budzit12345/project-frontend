@@ -38,6 +38,17 @@ Nie trzeba niczego instalować – aplikacja działa lokalnie w przeglądarce.
 - CSS3
 - JavaScript (bez frameworków)
 
+## Nowe funkcje
+
+- Walidacja zadań użytkownika validateTask sprawdza, czy zadanie nie jest puste i nie zawiera wulgaryzmów.
+- Plik validation.test.js zawiera testy funkcji walidującej — uruchamiane automatycznie.
+
+## Jak uruchomić testy
+
+1. Otwórz index.html w Live Server
+2. Sprawdź konsolę przeglądarki (F12) — zobaczysz wynik testów
+
+
 ## Autor
 
 Imię i nazwisko: Bartlomiej Janiak
