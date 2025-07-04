@@ -1,4 +1,4 @@
-name: Run Tests
+name: CI/CD Pipeline
 
 on:
   push:
@@ -7,20 +7,23 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  build-test-lint:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Run linter
+        run: npm run lint
 
       - name: Run tests
         run: npm test
